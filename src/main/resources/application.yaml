@@ -1,0 +1,31 @@
+# Spring properties
+spring:
+  application:
+    name: demo-spring-integration
+  artemis:
+    broker-url: tcp://localhost:61616
+    user: admin
+    password: admin
+    mode: native
+  datasource:
+    url: jdbc:h2:mem:bookintegrationdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+# App properties
+app:
+  queues:
+    book-queue: books.queue
+  topics:
+    book-topic: books.topic
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
